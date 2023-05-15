@@ -25,28 +25,67 @@ integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv
 crossorigin="anonymous"></script>
   <title>modelo OSI</title>
   <style>
+   
+   h1 {
+      -webkit-text-stroke: 2px rgb(2, 2, 2); 
+      color: #ffffff;
+      background-color: transparent;
+      border-color: rgb(231, 231, 231);
+      background-repeat: unset;
+      padding: 10px 1px;
+    }
+    h5{
+      color: #000;
+    }
+   
     .row {
-
-      background: linear-gradient(#7fcee6, #FFC107);
+      background: transparent;
       background-repeat: no-repeat;
     }
 
-    body {
-      height: 900px;
-      background: linear-gradient(#ffffff, #000000);
-      background-repeat: no-repeat;
+    body{
+     height: 100%;
+     background-image: url(img/boton.gif);
+      background-repeat:unset;
     }
-    button{
-      margin: 4px 2px;
-}
 
-button:hover {background-color: #e7e7e7;}
-
-.container-fluid{
-  background-color: transparent;
-}
+    button {
+      height: 40px;
+      background-image: url(img/boton.gif);
+      border-color: transparent;
+      border-radius: 10px;
     
+      margin: 8px 1px;
+    }
+
+    div {
+      background-color: transparent;
+    }
+
+    button:hover {
+      background-color: #ffffff;
+    }
+
+    .container-fluid {
+      background-color: transparent;
+    }
   </style>
+  <script>
+
+    function buscar(busqueda){
+      let aplicacion=document.getElementById("aplicacion");
+      let presentacion=document.getElementById("presentacion");
+      let sesion=document.getElementById("sesion");
+      let transporte=document.getElementById("transporte");
+      let red=document.getElementById("red");
+      let enlace=document.getElementById("enlace");
+      let fisica=document.getElementById("fisica");
+
+      $("#aplicacion div").each(function () {
+    $(this).html( "<div>" + $(this).html().split(" ").join("</div> <div>") + "</div>" );});
+    $("#aplicacion div:contains('" + aplicacion + "')").css("color", "#F00");
+    }
+  </script>
 </head>
 <body>
   <h1 class="text-center">Configuración de
@@ -55,10 +94,10 @@ button:hover {background-color: #e7e7e7;}
 
     <nav class="navbar bg-body-tertiary">
       <div class="container-fluid">
-        <a class="head1">Configuración de redes</a>
+        <a class="head1"> <img src="https://i.pinimg.com/originals/fd/d4/2c/fdd42c75b284947f92b07673af90e6f8.jpg" alt="Bootstrap" width="120" height="84"></a>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">ok</button>
+          <button class="btn btn-outline-success" type="submit" onclick="buscar(this)">Buscar</button>
         </form>
       </div>
     </nav>
@@ -67,64 +106,64 @@ button:hover {background-color: #e7e7e7;}
       <div class="col-1 "></div>
       <div class="col-5 ">
         <h1>Modelo OSI</h1>
-        <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
-          data-target=".smallExampleModal">Aplicación</button>
+        <div  class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
+          data-target=".smallExampleModal"><h5>Aplicación</h5></button>
               <div class="modal fade smallExampleModal" tabindex="-1" role="dialog" 
           aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                   <div class="modal-content">
-                      <div class="modal-header"><h6>Responsable de los servicios de red para las aplicaciones</h6>
+                      <div id="aplicacion" class="modal-header"><h6>Responsable de los servicios de red para las aplicaciones</h6>
                       </div></div></div></div></button>
            <button type="button" class="btn btn-primary" data-toggle="modal" 
-          data-target=".smallExampleModal1">Presentación</button>
+          data-target=".smallExampleModal1"><h5>Presentación</h5></button>
               <div class="modal fade smallExampleModal1" tabindex="-1" role="dialog" 
           aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                   <div class="modal-content">
-                      <div class="modal-header"><h6>Transforma el formato de los datos y proporciona una interfaz estándar para la capa de aplicación</h6>
+                      <div  id="presentacion" class="modal-header"><h6>Transforma el formato de los datos y proporciona una interfaz estándar para la capa de aplicación</h6>
                       </div></div></div></div></button></button></div>
         <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
-          data-target=".smallExampleModal2">Sesión</button>
+          data-target=".smallExampleModal2"><h5>Sesión</h5></button>
               <div class="modal fade smallExampleModal2" tabindex="-1" role="dialog" 
           aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                   <div class="modal-content">
-                      <div class="modal-header"><h6>	Establece, administra y finaliza las conexiones entre las aplicaciones locales y las remotas</h6>
+                      <div id="sesion" class="modal-header"><h6>Establece, administra y finaliza las conexiones entre las aplicaciones locales y las remotas</h6>
                       </div></div></div></div></button></button>
         </div>
         <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
-          data-target=".smallExampleModal3">Transporte</button>
+          data-target=".smallExampleModal3"><h5>Transporte</h5></button>
               <div class="modal fade smallExampleModal3" tabindex="-1" role="dialog" 
           aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                   <div class="modal-content">
-                      <div class="modal-header"><h6>Proporciona transporte confiable y control del flujo a través de la red</h6>
+                      <div id="transporte" class="modal-header"><h6>Proporciona transporte confiable y control del flujo a través de la red</h6>
                       </div></div></div></div></button></button>
         </div>
         <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
-          data-target=".smallExampleModal4">Red</button>
+          data-target=".smallExampleModal4"><h5>Red</h5></button>
               <div class="modal fade smallExampleModal4" tabindex="-1" role="dialog" 
           aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                   <div class="modal-content">
-                      <div class="modal-header"><h6>	Responsable del direccionamiento lógico y el dominio del enrutamiento</h6>
+                      <div id="red" class="modal-header"><h6>	Responsable del direccionamiento lógico y el dominio del enrutamiento</h6>
                       </div></div></div></div></button></button></div>
         <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
-          data-target=".smallExampleModal5">Enlace de datos</button>
+          data-target=".smallExampleModal5"><h5>Enlace de datos</h5></button>
               <div class="modal fade smallExampleModal5" tabindex="-1" role="dialog" 
           aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                   <div class="modal-content">
-                      <div class="modal-header"><h6>Proporciona direccionamiento físico y procedimientos de acceso a medios</h6>
+                      <div id="enlace" class="modal-header"><h6>Proporciona direccionamiento físico y procedimientos de acceso a medios</h6>
                       </div></div></div></div></button>
             </button></div>
         <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
-          data-target=".smallExampleModal6">Física</button>
+          data-target=".smallExampleModal6"><h5>Física</h5></button>
               <div class="modal fade smallExampleModal6" tabindex="-1" role="dialog" 
           aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                   <div class="modal-content">
-                      <div class="modal-header"><h6>	Define todas las especificaciones eléctricas y físicas de los dispositivos</h6>
+                      <div id="fisica" class="modal-header"><h6>	Define todas las especificaciones eléctricas y físicas de los dispositivos</h6>
                       </div></div></div></div></button></button>
         </div>
       </div>
@@ -134,39 +173,39 @@ button:hover {background-color: #e7e7e7;}
       <div class="col-5 ">
         <h1>TCP/IP</h1>
         <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
-          data-target=".smallExampleModal11">Aplicación</button>
+          data-target=".smallExampleModal11"><h5>Aplicación</h5></button>
               <div class="modal fade smallExampleModal11" tabindex="-1" role="dialog" 
           aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                   <div class="modal-content">
-                      <div class="modal-header"><h6>incorpora aplicaciones de red estándar (Telnet, SMTP, FTP, etc.).</h6>
+                      <div id="" class="modal-header"><h6>incorpora aplicaciones de red estándar (Telnet, SMTP, FTP, etc.).</h6>
                       </div></div></div></div></button>
         </div>
         <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
-          data-target=".smallExampleModal22">Transporte</button>
+          data-target=".smallExampleModal22"><h5>Transporte</h5></button>
               <div class="modal fade smallExampleModal22" tabindex="-1" role="dialog" 
           aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                   <div class="modal-content">
-                      <div class="modal-header"><h6> brinda los datos de enrutamiento, junto con los mecanismos que permiten conocer el estado de la transmisión. Comprende a los protocolos TCP y UDP.</h6>
+                      <div id="" class="modal-header"><h6> brinda los datos de enrutamiento, junto con los mecanismos que permiten conocer el estado de la transmisión. Comprende a los protocolos TCP y UDP.</h6>
                       </div></div></div></div></button></button>
         </div>
         <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
-          data-target=".smallExampleModal33">Internet</button>
+          data-target=".smallExampleModal33"><h5>Internet</h5></button>
               <div class="modal fade smallExampleModal33" tabindex="-1" role="dialog" 
           aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                   <div class="modal-content">
-                      <div class="modal-header"><h6>es responsable de proporcionar el paquete de datos (datagrama).</h6>
+                      <div id="" class="modal-header"><h6>es responsable de proporcionar el paquete de datos (datagrama).</h6>
                       </div></div></div></div></button></button>
         </div>
         <div class="row "><button type="button" class="btn btn-primary" data-toggle="modal" 
-          data-target=".smallExampleModal44">Acceso a la red</button>
+          data-target=".smallExampleModal44"><h5>Acceso a la red</h5></button>
               <div class="modal fade smallExampleModal44" tabindex="-1" role="dialog" 
           aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-sm">
                   <div class="modal-content">
-                      <div class="modal-header"><h6> especifica la forma en la que los datos deben enrutarse, sea cual sea el tipo de red utilizado.</h6>
+                      <div id="" class="modal-header"><h6>Especifica la forma en la que los datos deben enrutarse, sea cual sea el tipo de red utilizado.</h6>
                       </div></div></div></div></button></button></div>
       </div>
     </div>
